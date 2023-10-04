@@ -23,36 +23,17 @@ def define_ports(port_data):
         return port
 
 
-def define_addr(line, description):
-    address_name = line.split()[7]
-    subnet = line.split()[8]
-    converted_file.write(f"edit {address_name}\n")
-    converted_file.write(f"set subnet {subnet}\n")
-    converted_file.write(f"set comment {description}\n")
-    converted_file.write("next\n")
+def define_addr(address_name, subnet,converted_addr):
+    converted_addr.write(f"edit {address_name}\n")
+    converted_addr.write(f"set subnet {subnet}\n")
+    converted_addr.write(f"set comment {description}\n")
+    converted_addr.write("next\n")
 
 
-def define_addrgrp(converted_grp):
-    grp_name = line.split()[7]
-    address_name = line.split()[9]
+def define_addrgrp(grp_name,address_name,converted_grp):
     converted_grp.write(f"edit {grp_name}\n")
     converted_grp.write(f"append member {address_name}\n")
     converted_grp.write("next\n")
-
-
-def define_vlans(converted_vlans):
-    vlan_id = line.split()[6]
-    vlan_name = line.split()[10]
-    vlan_name = ipaddress.ip_interface(vlan_name)
-    vlan_name_new = vlan_name.network
-    vlan_ip = line.split()[10]
-    converted_vlans.write(f"edit {vlan_name_new}\n")
-    converted_vlans.write("set vdom ''\n")
-    converted_vlans.write(f"set ip {vlan_ip}\n")
-    converted_vlans.write(
-        """set allowaccess ping\nset status down\nset role dmz\nset interface 'PO-1'\n""")
-    converted_vlans.write(f"set vlanid {vlan_id}\n")
-    converted_vlans.write("next\n")
 
 
 def policy_writer(policy_id, policy_name, src_int, dst_int, src_addr, dst_addr, port, action, scheduler, count, converted_policies):
@@ -82,9 +63,16 @@ def policy_writer(policy_id, policy_name, src_int, dst_int, src_addr, dst_addr, 
 
 
 with open("parsed_config.json") as backup_file,\
-        open("converted_config.txt", "w") as converted_policies:
+        open("converted_config.txt", "w") as converted_config:
     data = json.load(backup_file)
     count = 0
+    converted_config.write("config firewall address\n")
+    for pol_id, policy in data.items():
+    converted_config.write("config firewall addrgrp\n")
+    for pol_id, policy in data.items():
+    converted_config.write("config firewall services custom\n")
+    for pol_id, policy in data.items():
+    converted_config.write("config firewall policy\n")
     for pol_id, policy in data.items():
         p_name = policy["pol_name"]
         p_srcint = policy["src_zone"]
@@ -96,4 +84,4 @@ with open("parsed_config.json") as backup_file,\
         p_log = policy["log_action"]
         p_scheduler = "always"
         policy_writer(pol_id, p_name, p_srcint, p_srcint, p_srcaddr,
-                      p_dstaddr, p_ports, p_action, p_scheduler, count, converted_policies)
+                      p_dstaddr, p_ports, p_action, p_scheduler, count, converted_config)
