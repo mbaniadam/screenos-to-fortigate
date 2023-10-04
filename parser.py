@@ -6,7 +6,12 @@ import json
 from itertools import chain
 from collections import defaultdict, OrderedDict
 from netaddr import IPAddress
+import os 
+import sys
 
+os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
+path = os.getcwd()
+print(path)
 
 def recursive_resolve(groups, objects):
     group_dicts = {k: {} for k in groups}
@@ -388,10 +393,10 @@ def sos_parse_srv_objects(config_lines):
 
 if __name__ == '__main__':
     # Read in raw config / output files
-    config_in_file_path = 'ScreenOS_Parser\input\\bk0410-valiasr.txt'
-    def_srv_obj_lines = txt_to_list('ScreenOS_Parser\input\sos_predef_srv_objects.txt')
-    def_srv_group_lines = txt_to_list('ScreenOS_Parser\input\sos_predef_srv_groups.txt')
-    config_out_file_path = 'ScreenOS_Parser\\fg_conf.json'
+    config_in_file_path = 'input\origin_config.txt'
+    def_srv_obj_lines = txt_to_list('input\sos_predef_srv_objects.txt')
+    def_srv_group_lines = txt_to_list('input\sos_predef_srv_groups.txt')
+    config_out_file_path = 'parsed_config.json'
     config_lines = txt_to_list(config_in_file_path)
 
     # Extract address objects
@@ -434,5 +439,5 @@ if __name__ == '__main__':
         parsed_filter_rules[rule]['dst_addr'] = resolved_dst_addr
 
     # Output config file to JSON
-    with open('ScreenOS_Parser\\fg_conf.json', "w") as f:
+    with open('parsed_config.json', "w") as f:
         json.dump(parsed_filter_rules, f)

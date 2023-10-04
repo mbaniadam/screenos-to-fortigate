@@ -81,8 +81,8 @@ def policy_writer(policy_id, policy_name, src_int, dst_int, src_addr, dst_addr, 
     count += 1
 
 
-with open("fg_conf.json") as backup_file,\
-        open("converted_policies.txt", "w") as converted_policies:
+with open("parsed_config.json") as backup_file,\
+        open("converted_config.txt", "w") as converted_policies:
     data = json.load(backup_file)
     count = 0
     for pol_id, policy in data.items():
@@ -97,5 +97,3 @@ with open("fg_conf.json") as backup_file,\
         p_scheduler = "always"
         policy_writer(pol_id, p_name, p_srcint, p_srcint, p_srcaddr,
                       p_dstaddr, p_ports, p_action, p_scheduler, count, converted_policies)
-        # src_addr = ' '.join(addr_name for addr_name in policy["src_addr"].keys())
-        # dst_addr = ' '.join(addr_name for addr_name in policy["dst_addr"].keys())
