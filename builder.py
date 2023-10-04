@@ -89,7 +89,8 @@ with open("parsed_config.json") as backup_file,\
         define_addrgrp(groups)
     converted_config.write("config firewall services custom\n")
     for pol_id, policy in data.items():
-        #p_ports = ' '.join(list(map(lambda x: x, policy["pol_proto"].keys())))
+        p_ports = ' '.join(list(map(lambda x: x, policy["pol_proto"].keys())))
+        ###### Working on it
     converted_config.write("config firewall policy\n")
     for pol_id, policy in data.items():
         p_name = policy["pol_name"]
