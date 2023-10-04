@@ -88,7 +88,7 @@ with open("parsed_config.json") as backup_file,\
     for pol_id, policy in data.items():
         p_name = policy["pol_name"]
         p_srcint = policy["src_zone"]
-        p_srcint = policy["dst_zone"]
+        p_dstint = policy["dst_zone"]
         p_srcaddr = ' '.join(list(map(lambda x: x, policy["src_addr"].keys())))
         p_dstaddr = ' '.join(list(map(lambda x: x, policy["dst_addr"].keys())))
         p_ports = ' '.join(list(map(lambda x: x, policy["pol_proto"].keys())))
