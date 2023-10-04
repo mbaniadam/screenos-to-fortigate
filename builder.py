@@ -75,7 +75,7 @@ def policy_writer(policy_id, policy_name, src_int, dst_int, src_addr, dst_addr, 
     # converted_policies.write(f"set service {port}\n")
     if action == "accept":
         converted_policies.write(
-            f"set utm-status enable\nset ssl-ssh-profile 'certificate-inspection'\nset ips-sensor 'BMC_High'\nset logtraffic all\nnext\n")
+            f"set utm-status enable\nset ssl-ssh-profile 'certificate-inspection'\nset ips-sensor 'Def_High'\nset logtraffic all\nnext\n")
     else:
         converted_policies.write(f"set logtraffic all\nnext\n")
     count += 1
