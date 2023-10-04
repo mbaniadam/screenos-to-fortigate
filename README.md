@@ -3,7 +3,7 @@ This is a Python script that converts Juniper ScreenOS firewall policies to Fort
 
 ## Usage
 
-**Parse the Original Configuration:**
+1- **Parse the Original Configuration:**
 
    Before converting Juniper ScreenOS configurations to Fortigate format, you need to parse the original configuration file using `parser.py`. Make sure you have the original configuration file named `origin_config.txt` in the **input** directory. Run the following command:
 
@@ -12,7 +12,7 @@ This is a Python script that converts Juniper ScreenOS firewall policies to Fort
 ```
 This will generate a parsed_config.json file containing the parsed configuration.
 
-Convert and Write the Configuration:
+2- **Convert and Write the Configuration:**
 
 Once you have the parsed JSON configuration, you can convert it to Fortigate format using builder.py. Run the following command:
 
