@@ -7,21 +7,15 @@ path = os.getcwd()
 print(path)
 
 
-def define_ports(port_data):
-    port = ""
-    if "-" in port_data:
-        port_low = port_data.split("-")[1]
-        try:
-            # Port-23456-23457
-            port_high = port_data.split("-")[2]
-        except:
-            port_high = port_data.split("-")[1]
-        if port_low == port_high:
-            port = port_low
-        else:
-            port = f"{port_low}-{port_high}"
-        return port
-
+def define_ports(ports_dic):
+    for port_name, port_data in ports_dic.items():
+        if len(port_data[0].split('_')) >= 5:
+            port_type = port_data[0].split('_')[0]
+            dst_port_range = port_data[0].split('_')[4]
+            converted_config.write(f"edit {port_name}\n")
+            converted_config.write(f"set {port_type}-portrange {dst_port_range}\n")
+            converted_config.write("next\n")
+            
 
 def define_addr(address_data):
     
@@ -78,6 +72,7 @@ with open("parsed_config.json") as backup_file,\
     data = json.load(backup_file)
     count = 0
     groups = {}
+    ports_dic = {}
     converted_config.write("config firewall address\n")
     for pol_id, policy in data.items():
         p_srcaddr = policy["src_addr"]
@@ -91,8 +86,8 @@ with open("parsed_config.json") as backup_file,\
     converted_config.write("end\n")
     converted_config.write("config firewall services custom\n")
     for pol_id, policy in data.items():
-        p_ports = ' '.join(list(map(lambda x: x, policy["pol_proto"].keys())))
-        ###### Working on it #####
+        ports_dic.update(policy["pol_proto"])
+    define_ports(ports_dic)
     converted_config.write("end\n")
     converted_config.write("config firewall policy\n")
     for pol_id, policy in data.items():
