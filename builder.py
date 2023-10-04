@@ -84,13 +84,16 @@ with open("parsed_config.json") as backup_file,\
         define_addr(p_srcaddr)
         p_dstaddr = policy["dst_addr"]
         define_addr(p_dstaddr)
+    converted_config.write("end\n")
     converted_config.write("config firewall addrgrp\n")
     for pol_id, policy in data.items():
         define_addrgrp(groups)
+    converted_config.write("end\n")
     converted_config.write("config firewall services custom\n")
     for pol_id, policy in data.items():
         p_ports = ' '.join(list(map(lambda x: x, policy["pol_proto"].keys())))
-        ###### Working on it
+        ###### Working on it #####
+    converted_config.write("end\n")
     converted_config.write("config firewall policy\n")
     for pol_id, policy in data.items():
         p_name = policy["pol_name"]
@@ -102,5 +105,5 @@ with open("parsed_config.json") as backup_file,\
         p_action = policy["pol_action"]
         p_log = policy["log_action"]
         p_scheduler = "always"
-        policy_writer(pol_id, p_name, p_srcint, p_srcint, p_srcaddr,
+        policy_writer(pol_id, p_name, p_srcint, p_dstint, p_srcaddr,
                       p_dstaddr, p_ports, p_action, p_scheduler, count)
