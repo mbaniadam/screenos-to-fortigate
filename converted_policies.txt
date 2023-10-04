@@ -1,0 +1,3421 @@
+edit 275
+set name -P275
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.144 S_172.18.55.83 S_172.18.55.182 S_172.18.55.196 S_172.18.55.66 S_172.18.55.205 S_172.18.55.197
+set dstaddr S_172.26.32.130
+set action permit
+set schedule always
+set service Port-494
+set logtraffic all
+next
+edit 269
+set name -P269
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr Grp_All_SRV_Tolid Grp-TolidSrvs-Valiasr Grp-IBGSrvs-Valiasr Grp_All_SRV_IBG
+set dstaddr S_172.26.40.56 S_172.26.38.50
+set action permit
+set schedule always
+set service Port-9002 Port-2049 HTTP HTTPS Port-5050
+set logtraffic all
+next
+edit 273
+set name -P273
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.47
+set dstaddr S_172.16.185.107
+set action permit
+set schedule always
+set service FTP SMB
+set logtraffic all
+next
+edit 268
+set name -P268
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.47
+set dstaddr S_172.22.51.3 S_172.16.185.107
+set action permit
+set schedule always
+set service FTP
+set logtraffic all
+next
+edit 286
+set name -P286
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.97
+set dstaddr S_172.26.99.61 S_172.31.64.27 S_172.31.0.62 S_172.22.185.18
+set action permit
+set schedule always
+set service Port-1915-1916
+set logtraffic all
+next
+edit 267
+set name -P267
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr A_172.18.54.0/23
+set dstaddr Any
+set action deny
+set schedule always
+set service SMB
+set logtraffic all
+next
+edit 281
+set name SSH Saeidi-P281
+set srcintf Trust
+set dstintf Trust
+set srcaddr 172.16.167.70/32
+set dstaddr S_172.18.55.91
+set action permit
+set schedule always
+set service SSH
+set logtraffic all
+next
+edit 292
+set name -P292
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.20.144.85
+set dstaddr A_172.18.54.0/23
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 266
+set name DENY SMB-P266
+set srcintf Trust
+set dstintf Trust
+set srcaddr Any
+set dstaddr Any
+set action deny
+set schedule always
+set service SMB
+set logtraffic all
+next
+edit 264
+set name -P264
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.151.108 C_172.20.151.109
+set dstaddr Grp-IBG DB V Grp-TolidSrvs-Valiasr Grp-IBGSrvs-Valiasr
+set action permit
+set schedule always
+set service port-9443 Port-9080 HTTP Port-9444 HTTPS
+set logtraffic all
+next
+edit 317
+set name Scan-Bank-Pen-P317
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.29.232 C_172.20.29.231 C_172.20.29.223 C_172.20.29.198 S_172.18.136.194
+set dstaddr S_172.18.55.47 S_172.18.55.198
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 263
+set name -P263
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.62 C_172.20.147.71
+set dstaddr S_172.18.55.5 S_172.18.55.44 S_172.18.55.94 S_172.18.55.15 S_172.18.55.17
+set action permit
+set schedule always
+set service FTP port-9043 SSH HTTP
+set logtraffic all
+next
+edit 245
+set name -P245
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr A_172.18.54.0/23
+set dstaddr Grp-Mellat.bm
+set action deny
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 262
+set name -P262
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.47
+set dstaddr S_172.16.224.150
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 261
+set name -P261
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.144.142 C_172.20.144.158 C_172.20.144.168 C_172.20.144.187
+set dstaddr S_172.18.55.47
+set action permit
+set schedule always
+set service HTTPS Port-8830 HTTP
+set logtraffic all
+next
+edit 289
+set name Mian Abadi-P289
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.29.232 C_172.20.29.226 C_172.20.29.231 C_172.20.29.223 C_172.20.29.222 C_172.20.29.198 S_172.18.136.194 C_172.20.29.237
+set dstaddr S_172.18.55.111
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 259
+set name -P259
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.142 C_172.20.140.176 C_172.16.4.72 C_172.20.140.221 C_172.20.140.181 C_172.20.140.242 C_172.20.140.210 C_172.20.140.227 C_172.20.140.154 C_172.20.140.166 C_172.20.140.153 C_172.20.140.206 C_172.20.140.173 C_172.20.140.177 C_172.20.140.141 C_172.20.149.181 C_172.20.140.196 A_172.20.141.0/24 C_172.20.140.223 C_172.20.140.167 C_172.20.140.175 C_172.18.2.184 C_172.20.140.195 C_172.20.140.158 C_172.20.140.233 C_172.20.140.174 A_172.20.131.0/24 C_172.20.140.215 C_172.20.140.183 C_172.20.149.186 C_172.20.140.132 C_172.20.140.228 C_172.20.140.193 C_172.20.140.226 C_172.20.140.212
+set dstaddr S_172.18.55.111
+set action permit
+set schedule always
+set service port-9443 Port-9080 port-9043 HTTP port-8080 HTTPS
+set logtraffic all
+next
+edit 241
+set name -P241
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.20.238.50 C_172.20.147.71 C_172.20.147.39 S_172.26.121.84
+set dstaddr S_172.18.55.163 S_172.18.55.75
+set action permit
+set schedule always
+set service Port-6255-6 Port-9009 Port-6355-6 Port-6455-6 Port-6855-6 Port-6755-6 Port-6155-6
+set logtraffic all
+next
+edit 258
+set name -P258
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.162.253 S_172.16.162.2/31
+set dstaddr S_172.18.55.149 S_172.18.55.152 S_172.18.55.147 S_172.18.55.157 S_172.18.55.148 S_172.18.55.158 S_172.18.55.150 S_172.18.55.151
+set action permit
+set schedule always
+set service port-9443 HTTPS
+set logtraffic all
+next
+edit 252
+set name PAM-Bank-P252
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp-PAM-Bank
+set dstaddr Grp-TolidSrvs-Valiasr S_172.18.54.197 Grp-IBGSrvs-Valiasr
+set action permit
+set schedule always
+set service port-3389 SSH PING
+set logtraffic all
+next
+edit 257
+set name -P257
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp_SOC-Nessus
+set dstaddr A_172.18.54.0/23
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 250
+set name -P250
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.83
+set dstaddr S_172.26.36.34
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 202
+set name -P202
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.25.32.0/19 Deny-all-Attack
+set dstaddr Any
+set action deny
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 256
+set name -P256
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.131.29
+set dstaddr S_172.18.54.22
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 253
+set name -P253
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.216 C_172.20.140.201 C_172.20.140.203 C_172.20.140.233 C_172.20.140.184
+set dstaddr S_172.18.55.163
+set action permit
+set schedule always
+set service port-9043 HTTPS Port-9080
+set logtraffic all
+next
+edit 251
+set name -P251
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.26.125.28 S_172.26.125.26 S_172.26.125.24 S_172.26.125.30
+set dstaddr S_172.18.55.83
+set action permit
+set schedule always
+set service Port-5555 HTTPS HTTP
+set logtraffic all
+next
+edit 61
+set name -P61
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.144.142 S_172.16.249.70 S_172.16.249.168
+set dstaddr S_172.18.55.78 S_172.18.55.73
+set action permit
+set schedule always
+set service Port-1919 PING
+set logtraffic all
+next
+edit 248
+set name -P248
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.186
+set dstaddr S_172.18.54.10
+set action permit
+set schedule always
+set service port-9443 HTTPS Port-9080
+set logtraffic all
+next
+edit 244
+set name -P244
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.225 C_172.20.140.228 C_172.20.140.193 C_172.20.140.221 C_172.20.140.181 C_172.20.140.233 S_172.20.238.49 C_172.20.140.216 C_172.20.140.210
+set dstaddr S_172.18.55.224 S_172.18.55.206
+set action permit
+set schedule always
+set service port-9443 Port-9080 port-9043 HTTP HTTPS
+set logtraffic all
+next
+edit 242
+set name Scan For Raja-P242
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.26.40.56
+set dstaddr Grp-OCR CDN Grp_All_SRV_Tolid Grp-TolidSrvs-Valiasr Grp-IBGSrvs-Valiasr Grp_All_SRV_IBG
+set action permit
+set schedule always
+set service Port-5985-5986 SSH
+set logtraffic all
+next
+edit 254
+set name -P254
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.203 C_172.16.8.58 C_172.20.140.196
+set dstaddr S_172.18.55.111
+set action permit
+set schedule always
+set service Port-9443-9452 port-9443
+set logtraffic all
+next
+edit 324
+set name -P324
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.132
+set dstaddr S_172.18.55.206
+set action permit
+set schedule always
+set service Port-Https-443 port-8080 Port-9080 HTTP
+set logtraffic all
+next
+edit 246
+set name -P246
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.111
+set dstaddr S_172.20.238.50 S_172.20.238.7 C_172.20.148.78
+set action permit
+set schedule always
+set service Port-9080 HTTP port-8080 Port-6855-6 Port-6755-6
+set logtraffic all
+next
+edit 243
+set name -P243
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.149 S_172.18.55.152 S_172.18.55.147 S_172.18.55.153 S_172.18.55.216 S_172.18.55.218 S_172.18.55.148 S_172.18.55.111 S_172.18.55.217 S_172.18.55.150 S_172.18.55.151
+set dstaddr S_172.16.225.155 S_172.16.224.103
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 237
+set name -P237
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.111
+set dstaddr S_172.18.150.164
+set action permit
+set schedule always
+set service POP3 SMTP
+set logtraffic all
+next
+edit 74
+set name -P74
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.18.173.107 C_172.16.5.188 S_172.16.162.2/31 S_172.16.162.19 S_172.16.162.253 C_172.16.0.227
+set dstaddr S_172.18.55.163 S_172.18.55.111 S_172.18.55.75
+set action permit
+set schedule always
+set service port-9443 Port-9080 port-9043 HTTP Port-9044 Port-9444 HTTPS
+set logtraffic all
+next
+edit 234
+set name -P234
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.16.185.0/24 A_172.26.120.0/23 A_172.20.238.0/23 A_172.16.224/23 A_172.26.41.0/24 A_172.26.122.0/24 A_172.26.192.0/23 S_172.23.16.202 A_172.26.125.0/24 A_172.26.34.0/24 A_172.26.38.0/24 A_172.16.167.0/24 A_172.20.240.0/23 S_172.16.224.135 A_172.22.224.0/23 A_172.16.163.0/24 A_172.26.37.0/24 A_172.26.194.0/24 A_172.26.42.0/24 A_172.16.16.0/24 A_172.26.43.0/24 A_172.16.26.0/23 A_172.26.124.0/24 A_172.26.126.0/23 A_172.16.164.0/24 A_172.26.32.0/24 A_172.26.33.0/24 A_172.26.35.0/24 A_172.26.123.0/24 A_172.26.40.0/24
+set dstaddr S_172.18.54.194
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 233
+set name -P233
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.169 C_172.20.140.160 S_172.26.121.84 C_172.20.140.177
+set dstaddr S_172.18.55.198
+set action permit
+set schedule always
+set service port-8080 HTTPS Port-9080 HTTP
+set logtraffic all
+next
+edit 114
+set name -P114
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.225.31 C_172.20.140.221 C_172.20.140.183 C_172.18.173.104
+set dstaddr S_172.18.55.118 S_172.18.55.61
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 232
+set name -P232
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.22.255.18 C_172.20.140.143 S_172.22.255.13 S_172.22.255.14 C_172.20.140.172 S_172.16.167.91 S_172.22.255.12 C_172.20.140.151 C_172.20.140.128 S_172.22.255.31 S_172.22.255.27 C_172.20.140.198 S_172.22.255.17 C_172.20.140.196
+set dstaddr S_172.18.55.198
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 231
+set name -P231
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.142 C_172.20.140.155 C_172.20.148.124 C_172.20.131.70 C_172.20.140.160 C_172.20.140.201 C_172.20.140.172 C_172.20.140.221 C_172.20.147.60 C_172.20.140.204 C_172.20.140.146 C_172.20.140.210 C_172.20.140.213 S_172.22.255.18 C_172.20.140.166 C_172.20.140.156 C_172.20.131.129 C_172.20.140.232 C_172.20.131.10 S_172.20.238.49 C_172.20.140.249 C_172.20.140.173 C_172.20.140.177 S_172.22.255.27 C_172.20.144.35 C_172.20.140.231 C_172.20.140.141 S_172.22.255.17 C_172.20.140.163 C_172.20.140.143 C_172.20.140.168 C_172.20.140.175 C_172.20.140.165 S_172.22.255.13 C_172.20.147.27 S_172.22.255.14 C_172.20.140.203 C_172.20.140.211 C_172.20.147.31 S_172.20.146.64 C_172.20.140.174 C_172.20.140.184 C_172.20.131.118 C_172.20.140.169 C_172.20.140.238 C_172.20.140.183 C_172.20.147.123 S_172.16.225.31 C_172.20.140.234 C_172.20.140.178 C_172.20.140.128 C_172.20.140.212 S_172.22.255.31 S_172.20.238.50 C_172.20.140.216 C_172.20.140.179 S_172.22.255.16
+set dstaddr S_172.18.55.206
+set action permit
+set schedule always
+set service port-9443 Port-9080 port-9043 HTTP port-8080 HTTPS
+set logtraffic all
+next
+edit 299
+set name -P299
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.18.145.51 S_172.26.43.165 S_172.26.43.166 C_172.20.140.157
+set dstaddr S_172.18.55.206
+set action permit
+set schedule always
+set service Port-9080
+set logtraffic all
+next
+edit 293
+set name -P293
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.227
+set dstaddr S_172.18.55.209
+set action permit
+set schedule always
+set service Port-9200
+set logtraffic all
+next
+edit 208
+set name -P208
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.20.142.37 S_172.20.142.38 S_172.26.32.182 S_172.26.32.181 S_172.20.142.94
+set dstaddr A_172.18.54.0/23
+set action permit
+set schedule always
+set service port-9443 Port-9080 SNMP port-9043 Port-7080 Port-1919 Port-161-162 PING HTTP port-9060 Port-9200 port-8080 HTTPS Port-9300 Port-50001 port-1414
+set logtraffic all
+next
+edit 225
+set name -P225
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.100 C_172.20.131.58 C_172.20.131.129 C_172.20.131.88 C_172.20.141.59 C_172.20.141.15
+set dstaddr S_172.18.54.10
+set action permit
+set schedule always
+set service HTTPS
+set logtraffic all
+next
+edit 222
+set name -P222
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.26.86.66
+set dstaddr Scan-SOC
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 221
+set name -P221
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.123 C_172.20.140.188 C_172.20.147.12 C_172.20.140.159 C_172.20.140.229
+set dstaddr S_172.18.54.10
+set action permit
+set schedule always
+set service FTP HTTPS HTTP
+set logtraffic all
+next
+edit 220
+set name -P220
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.18.173.114 C_172.16.8.29 C_172.16.8.43
+set dstaddr A_172.18.54.0/25 A_172.18.55.128/25 A_172.18.55.0/26
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 218
+set name -P218
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.131.118 C_172.20.131.49 C_172.20.131.129 C_172.20.131.88 C_172.20.131.25
+set dstaddr S_172.18.55.103
+set action permit
+set schedule always
+set service port-8080 Port-9080 HTTP
+set logtraffic all
+next
+edit 24
+set name -P24
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.169 C_172.20.140.155 C_172.20.140.238 C_172.20.140.244 C_172.20.140.203 C_172.20.144.35
+set dstaddr S_172.18.55.205 S_172.18.55.83
+set action permit
+set schedule always
+set service Port-9080 port-9043 port-9060 HTTP port-7777 HTTPS TRACEROUTE
+set logtraffic all
+next
+edit 215
+set name -P215
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.26.39.3 A_172.16.162.0/24 S_172.26.39.254 S_172.26.39.2
+set dstaddr A_172.18.55.128/25 S_172.18.55.83
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 214
+set name -P214
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_1.0.0.0/8
+set dstaddr S_172.18.55.18
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 209
+set name -P209
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.149.136
+set dstaddr S_172.18.55.163 S_172.18.54.2 S_172.18.55.183 S_172.18.55.47 S_172.18.55.83
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 207
+set name -P207
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.22.136.24 C_172.20.151.36 C_172.20.151.45 C_172.20.151.54 C_172.20.151.49 C_172.20.151.33
+set dstaddr S_172.18.55.143 S_172.18.55.141 S_172.18.55.142
+set action permit
+set schedule always
+set service Port-31531-31535 Port-9446 Port-31538
+set logtraffic all
+next
+edit 206
+set name -P206
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.13 C_172.20.147.4
+set dstaddr S_172.18.55.12
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 226
+set name -P226
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.89
+set dstaddr S_172.20.146.147
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 223
+set name -P223
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.206 S_172.18.55.198
+set dstaddr S_172.22.186.91 S_172.22.180.91 S_172.18.150.162
+set action permit
+set schedule always
+set service port-8080 HTTPS HTTP SMTP
+set logtraffic all
+next
+edit 216
+set name -P216
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.181 S_172.18.54.194
+set dstaddr S_172.20.142.239 S_172.20.142.9
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 247
+set name -P247
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.4 S_172.18.54.197
+set dstaddr S_172.20.145.20
+set action permit
+set schedule always
+set service POP3 SMTP
+set logtraffic all
+next
+edit 56
+set name -P56
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr Grp-BMMail
+set dstaddr S_172.16.44.39 S_172.16.44.40 S_172.18.232.142 S_172.18.180.2 S_172.22.186.73
+set action permit
+set schedule always
+set service POP3 SMTP
+set logtraffic all
+next
+edit 171
+set name -P171
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr Any
+set dstaddr R_185.212.128.154 R_198.185.159.144 R_197.159.142.174 R_119.235.252.210 R_199.192.17.160 R_104.224.223.6 R_51.38.234.138 S_192.168.56.142 R_212.83.190.122 R_185.118.113.117 R_2.187.201.47 S_172.18.232.142 R_2.182.31.84 R_2.144.230.195
+set action deny
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 200
+set name -P200
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.218 Grp_HBPWAS S_172.18.55.217 S_172.18.55.183 S_172.18.55.216
+set dstaddr S_172.16.185.79 S_172.16.185.131 S_172.26.34.68 S_172.26.43.77 S_172.26.34.64 S_172.16.185.143 S_172.16.185.144 S_172.26.34.100 S_172.26.34.123 S_172.26.34.101 S_172.16.185.135
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 205
+set name -P205
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.94
+set dstaddr S_172.26.35.113
+set action permit
+set schedule always
+set service SSH
+set logtraffic all
+next
+edit 204
+set name -P204
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.238 S_172.20.130.82 C_172.20.140.254 C_172.20.144.35 C_172.20.140.239
+set dstaddr Grp_HBPWAS
+set action permit
+set schedule always
+set service port-9443 HTTPS HTTP
+set logtraffic all
+next
+edit 195
+set name -P195
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.143 S_172.18.55.163 S_172.18.55.141 S_172.18.55.75 S_172.18.55.142
+set dstaddr S_172.16.225.156 S_172.16.225.160 S_172.16.225.158 S_172.16.225.159 S_172.16.225.157 S_172.16.224.117 S_172.16.167.137 S_172.16.164.109
+set action permit
+set schedule always
+set service Port-8011 port-9443 Port-1434 port-1433 HTTPS Port-50001
+set logtraffic all
+next
+edit 120
+set name -P120
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.149.150 C_172.20.144.168 C_172.20.144.216 C_172.20.149.144 C_172.20.149.181 S_172.26.121.83
+set dstaddr S_172.18.55.182 S_172.18.55.146 S_172.18.55.206
+set action permit
+set schedule always
+set service port-9443 Port-9080 port-9043 HTTP HTTPS
+set logtraffic all
+next
+edit 198
+set name -P198
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.225.248
+set dstaddr S_172.18.54.195
+set action permit
+set schedule always
+set service Port-445
+set logtraffic all
+next
+edit 196
+set name -P196
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.144.35 S_172.20.130.82
+set dstaddr S_172.18.55.159 S_172.18.55.160
+set action permit
+set schedule always
+set service port-9443 HTTPS
+set logtraffic all
+next
+edit 197
+set name -P197
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.26.81.9
+set dstaddr Any
+set action deny
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 194
+set name -P194
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.20.146.10
+set dstaddr S_172.18.55.79
+set action permit
+set schedule always
+set service SSH
+set logtraffic all
+next
+edit 193
+set name -P193
+set srcintf Trust
+set dstintf Trust
+set srcaddr Any
+set dstaddr S_172.18.54.197
+set action deny
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 235
+set name -P235
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp_All_SRV_NSG Grp_All_SRV_Tolid Grp_All_SRV_IBG
+set dstaddr S_172.18.54.194
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 187
+set name -P187
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.39
+set dstaddr S_172.18.55.6 S_172.18.55.5
+set action permit
+set schedule always
+set service SSH
+set logtraffic all
+next
+edit 113
+set name -P113
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.118 S_172.18.55.67 S_172.18.55.144 S_172.18.55.182 S_172.18.55.206
+set dstaddr Any
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 304
+set name Kata-01-P304
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.47
+set dstaddr S_172.26.94.77
+set action permit
+set schedule always
+set service Port-17000 Port-14000 PING Port-15000 Port-13000
+set logtraffic all
+next
+edit 305
+set name Kata-02-P305
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.47
+set dstaddr S_172.26.96.66
+set action permit
+set schedule always
+set service HTTPS
+set logtraffic all
+next
+edit 186
+set name -P186
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.138 S_172.18.55.139
+set dstaddr Z10_Jeyhoon-DATA
+set action permit
+set schedule always
+set service Port-408
+set logtraffic all
+next
+edit 185
+set name -P185
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.138
+set dstaddr S_172.16.224.200
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 182
+set name -P182
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.40 C_172.20.147.31 C_172.20.147.60 C_172.20.147.119 C_172.20.147.39
+set dstaddr S_172.18.55.15 S_172.18.55.17
+set action permit
+set schedule always
+set service port-9043 SSH HTTP
+set logtraffic all
+next
+edit 181
+set name -P181
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.0.81 C_172.20.153.109
+set dstaddr Any
+set action deny
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 180
+set name -P180
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.95 Grp_HBPWAS S_172.18.55.197 S_172.18.55.196
+set dstaddr S_172.22.13.10 S_172.22.13.3 S_172.22.13.9 S_172.22.13.4
+set action permit
+set schedule always
+set service port-3306
+set logtraffic all
+next
+edit 177
+set name -P177
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.149 S_172.18.55.152 S_172.18.55.163 S_172.18.55.147 S_172.18.55.11 S_172.18.55.148 S_172.18.55.111 S_172.18.55.161 S_172.18.55.75 S_172.18.55.174 S_172.18.55.150 S_172.18.55.151 S_172.18.55.83
+set dstaddr S_172.16.224.26 S_172.16.225.155 S_172.26.34.124 S_172.16.224.24 S_172.26.34.137 S_172.26.34.201 S_172.26.34.200 S_172.26.122.140 S_172.26.125.83 S_172.16.167.185 S_172.26.34.44 S_172.16.224.153 S_172.16.224.103 S_172.26.34.4 S_172.16.224.45 S_172.26.122.114 S_172.26.122.5
+set action permit
+set schedule always
+set service Port-9080 Port-9911 port-85 HTTP port-8080 HTTPS Port-82
+set logtraffic all
+next
+edit 176
+set name -P176
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.154
+set dstaddr Grp_PUSH
+set action permit
+set schedule always
+set service Port-1883 Port-1884 Port-1415
+set logtraffic all
+next
+edit 175
+set name -P175
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.110 C_172.20.148.9
+set dstaddr S_172.18.55.9 S_172.18.55.61 S_172.18.55.62
+set action permit
+set schedule always
+set service Port-9080 SSH HTTP HTTPS Port-50001
+set logtraffic all
+next
+edit 168
+set name -P168
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.8.213/31 S_172.16.8.46
+set dstaddr Any
+set action deny
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 37
+set name -P37
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.20.145.55 C_172.20.221.6 S_172.20.145.100 C_172.20.145.135 A_172.20.143.0/27 A_172.20.140.32/28 C_172.20.151.251 A_172.20.145.0/27 C_172.18.160.123 C_172.20.151.252 C_172.16.169.10
+set dstaddr Any
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 300
+set name -P300
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.143.3 C_172.20.149.182 C_172.20.140.16 C_172.20.149.138 C_172.20.149.147 C_172.20.149.146
+set dstaddr S_172.18.54.197
+set action permit
+set schedule always
+set service port-3389 SSH Port-8896
+set logtraffic all
+next
+edit 153
+set name -P153
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.16.0.0/12
+set dstaddr A_172.18.54.0/23
+set action permit
+set schedule always
+set service PING
+set logtraffic all
+next
+edit 129
+set name -P129
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_64.41.200.0/24
+set dstaddr S_172.18.55.97 S_172.18.55.82 S_172.18.55.83 S_172.18.55.183
+set action permit
+set schedule always
+set service HTTPS
+set logtraffic all
+next
+edit 127
+set name -P127
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.16.8.26 S_172.18.173.51 S_172.18.173.114 C_172.16.8.39 C_172.16.8.33 C_172.20.149.135 C_172.16.8.18 S_172.18.173.104
+set dstaddr S_172.18.55.67
+set action permit
+set schedule always
+set service Port-1884 Port-9080 HTTP HTTPS Port-1883 port-1414
+set logtraffic all
+next
+edit 174
+set name -P174
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr Grp_All_SRV_Tolid Grp_All_SRV_IBG
+set dstaddr S_172.16.16.152 S_172.16.16.153
+set action permit
+set schedule always
+set service Port-514 Port-9997 PING TRACEROUTE Port-514Udp
+set logtraffic all
+next
+edit 328
+set name -P328
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.4
+set dstaddr S_172.16.16.92
+set action permit
+set schedule always
+set service Port-478
+set logtraffic all
+next
+edit 152
+set name -P152
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr Grp-V-DenyToCore
+set dstaddr Z990-A1
+set action deny
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 104
+set name -P104
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.94
+set dstaddr S_172.16.16.94 Z990-A1
+set action deny
+set schedule always
+set service Port-494 port-446 Port-495
+set logtraffic all
+next
+edit 276
+set name -P276
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.144 S_172.18.55.83 S_172.18.55.182 S_172.18.55.196 S_172.18.55.66 S_172.18.55.205 S_172.18.55.197
+set dstaddr S_172.26.32.20
+set action permit
+set schedule always
+set service port-885 port-498 port-992
+set logtraffic all
+next
+edit 166
+set name -P166
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr A_172.18.54.0/23
+set dstaddr S_172.16.27.253 S_172.16.27.62 S_172.16.27.252
+set action permit
+set schedule always
+set service port-81 HTTPS Port-1688
+set logtraffic all
+next
+edit 162
+set name -P162
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr A_172.18.54.0/23
+set dstaddr S_172.16.27.250 S_172.22.169.5 S_172.16.27.6 S_172.16.224.35 S_172.16.27.249
+set action permit
+set schedule always
+set service Port-9997 PING HTTP HTTPS SYSLOG Port-8089
+set logtraffic all
+next
+edit 107
+set name -P107
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.20.160.0/23 A_172.20.140.0/22 A_172.20.139.0/24 A_172.20.144.0/21
+set dstaddr UpDate-DB2
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 108
+set name -P108
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.20.131.0/24 A_172.20.141.0/24
+set dstaddr S_172.18.55.97 S_172.18.55.101 S_172.18.55.85 S_172.18.55.84
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 106
+set name -P106
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp-Intranet Grp-IranIPs
+set dstaddr UpDate-DB2
+set action deny
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 102
+set name -P102
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.144.141 C_172.20.144.140
+set dstaddr S_172.18.55.77
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 75
+set name -P75
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.99 C_172.20.139.24 C_172.20.139.28 C_172.20.140.104 C_172.20.139.34 C_172.20.151.191
+set dstaddr S_172.18.55.102 S_172.18.55.101 S_172.18.55.103 S_172.18.55.84 S_172.18.55.107 S_172.18.55.85
+set action permit
+set schedule always
+set service port-9043 port-9060
+set logtraffic all
+next
+edit 5
+set name -P5
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp_SVN
+set dstaddr Grp_SVNSrvs-Valiasr
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 44
+set name -P44
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.20.150.205
+set dstaddr Grp_SVNSrvs-Valiasr
+set action permit
+set schedule always
+set service Port-5666 PING Port-55453
+set logtraffic all
+next
+edit 6
+set name -P6
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.20.150.192/27
+set dstaddr Grp_SVNSrvs-Valiasr
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 7
+set name -P7
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp-IBGSrvs-Forsat Grp-PO-36 Grp_TolidAdmins Grp-PO-Infra GRP_IBG Admins Grp-PO-25 Grp-PO-14
+set dstaddr Grp-IBGSrvs-Valiasr
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 8
+set name -P8
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.16.185.0/24 Grp-PO-36 Grp_TolidAdmins Grp-PO-Infra GRP_IBG Admins Grp-TolidSrvs-Forsat Grp-PO-25 Grp-PO-14
+set dstaddr Grp-TolidSrvs-Valiasr
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 50
+set name -P50
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.20.145.102
+set dstaddr S_172.18.55.193 Grp_SVNSrvs-Valiasr
+set action permit
+set schedule always
+set service PING
+set logtraffic all
+next
+edit 77
+set name -P77
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.139 S_172.18.55.143 S_172.18.55.141 S_172.18.55.138 S_172.18.55.142
+set dstaddr S_172.22.14.2 S_172.18.172.115 S_172.18.172.26 C_172.22.34.10 S_172.18.172.98
+set action permit
+set schedule always
+set service port-1433 Port-1434 Port-49180
+set logtraffic all
+next
+edit 311
+set name -P311
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.47
+set dstaddr S_172.26.5.46
+set action permit
+set schedule always
+set service port-7070
+set logtraffic all
+next
+edit 76
+set name -P76
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.47
+set dstaddr S_172.20.154.10 S_172.16.231.22 S_172.20.154.11
+set action permit
+set schedule always
+set service port-8080 Port-5052 Port-9092
+set logtraffic all
+next
+edit 67
+set name -P67
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr Grp_All_SRV_NSG Grp_All_SRV_Tolid Grp_All_SRV_IBG
+set dstaddr S_172.26.36.131 S_172.20.145.26
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 46
+set name -P46
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr Any
+set dstaddr S_172.20.145.55
+set action permit
+set schedule always
+set service port-81
+set logtraffic all
+next
+edit 47
+set name -P47
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr A_172.18.54.0/23
+set dstaddr S_172.26.36.135 S_172.26.36.136
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 78
+set name -P78
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr Grp_SVNSrvs-Valiasr
+set dstaddr Grp_SVN
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 48
+set name -P48
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.163 S_172.18.55.75
+set dstaddr S_172.20.146.162 S_172.20.150.251
+set action permit
+set schedule always
+set service port-9443
+set logtraffic all
+next
+edit 49
+set name -P49
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.4 S_172.18.55.139 S_172.18.54.201 S_172.18.54.202 S_172.18.55.138 S_172.18.55.130
+set dstaddr S_172.20.145.145
+set action permit
+set schedule always
+set service LDAP port-636
+set logtraffic all
+next
+edit 23
+set name -P23
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr Grp-TolidSrvs-Valiasr Grp-IBGSrvs-Valiasr
+set dstaddr Grp-MainFrames
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 9
+set name -P9
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr A_172.18.54.0/23
+set dstaddr Grp_DNS
+set action permit
+set schedule always
+set service PING DNS
+set logtraffic all
+next
+edit 4
+set name -P4
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr A_172.18.54.0/23
+set dstaddr GRP_NTPTime
+set action permit
+set schedule always
+set service NTP NNTP PING
+set logtraffic all
+next
+edit 22
+set name -P22
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr A_172.18.54.0/25 A_172.18.55.0/26
+set dstaddr A_172.16.185.0/24 A_172.26.34.0/24 A_172.26.43.0/24 Grp-TolidSrvs-Forsat
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 45
+set name -P45
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.61
+set dstaddr S_10.0.233.254 S_10.10.201.228 S_172.16.236.28 S_172.16.236.20
+set action permit
+set schedule always
+set service port-8080 HTTPS HTTP
+set logtraffic all
+next
+edit 52
+set name -P52
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.143 S_172.18.55.47 S_172.18.55.141 S_172.18.55.142
+set dstaddr S_172.18.172.194 S_172.18.172.98 S_172.22.29.209
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 53
+set name -P53
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.47
+set dstaddr S_172.20.145.111
+set action permit
+set schedule always
+set service SMTP
+set logtraffic all
+next
+edit 42
+set name -P42
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.76
+set dstaddr S_172.20.146.117 S_172.20.146.155 S_172.20.146.26 S_172.20.146.121 S_172.20.146.64 S_172.20.146.185
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 36
+set name -P36
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.94 S_172.18.55.91 S_172.18.55.67
+set dstaddr S_172.16.249.90 S_172.20.146.10 S_172.16.251.155
+set action permit
+set schedule always
+set service FTP
+set logtraffic all
+next
+edit 58
+set name -P58
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.92 S_172.18.55.94
+set dstaddr S_172.16.167.143 S_172.16.167.142 S_172.16.225.183
+set action permit
+set schedule always
+set service port-1433 Port-1434
+set logtraffic all
+next
+edit 27
+set name -P27
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.78 S_172.18.55.73
+set dstaddr S_192.168.104.168 S_172.16.249.70 S_172.16.249.168 S_172.29.200.160
+set action permit
+set schedule always
+set service TRACEROUTE Port-1919 PING port-1414
+set logtraffic all
+next
+edit 33
+set name -P33
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.174 S_172.18.55.18 Grp_HBPWAS S_172.18.55.111
+set dstaddr S_172.16.166.90 S_172.26.166.90 S_172.16.170.225 S_172.16.170.203 S_172.16.166.203
+set action permit
+set schedule always
+set service Port-1195 Port-11198 Port-1198-1199 Port-1120 Port-1188 Port-1298-1299
+set logtraffic all
+next
+edit 40
+set name -P40
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr Grp-IBG DB V
+set dstaddr S_172.16.167.151
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 34
+set name -P34
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.97 S_172.18.55.84
+set dstaddr S_172.26.166.90 S_172.16.166.90
+set action permit
+set schedule always
+set service Port-1799
+set logtraffic all
+next
+edit 35
+set name -P35
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.143 S_172.18.55.163 S_172.18.55.97 S_172.18.55.141 S_172.18.55.75 S_172.18.55.206 S_172.18.55.142 S_172.18.55.72 S_172.18.55.85
+set dstaddr S_172.31.249.10 S_172.16.166.113 S_172.31.248.10 S_172.26.227.100 S_172.16.227.98 S_172.16.227.97 S_172.16.227.100 S_172.16.253.110 S_172.16.227.121 S_172.16.227.96
+set action permit
+set schedule always
+set service HTTPS port-1010 port-1001 HTTP
+set logtraffic all
+next
+edit 59
+set name -P59
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.97
+set dstaddr S_172.16.167.214
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 60
+set name -P60
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.174 S_172.18.55.85
+set dstaddr S_172.16.167.207 C_172.20.147.40
+set action permit
+set schedule always
+set service port-1099 port-1098
+set logtraffic all
+next
+edit 20
+set name -P20
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr A_172.18.55.128/25 A_172.18.55.64/26 S_172.18.55.32
+set dstaddr A_172.16.185.0/24 S_172.20.146.153 Grp-IBGSrvs-Forsat S_172.20.142.12 A_172.26.35.0/24 S_172.20.146.152 S_172.20.146.5 A_172.26.37.0/24 S_172.20.142.11 A_172.26.40.0/24 A_172.26.38.0/24 A_172.26.33.0/24
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 64
+set name -P64
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.89
+set dstaddr S_172.20.146.7
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 66
+set name -P66
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.143 S_172.18.55.163 S_172.18.55.224 S_172.18.55.76 S_172.18.55.141 S_172.18.55.111 S_172.18.55.75 S_172.18.55.142 S_172.18.55.83
+set dstaddr S_172.16.167.229 S_172.16.167.209 S_172.16.170.162 S_172.16.170.214 S_172.16.167.216 S_172.16.167.84 S_172.16.170.199 S_172.16.170.203
+set action permit
+set schedule always
+set service port-9090 Port-1410 HTTP Port-1198-1199 port-1098 HTTPS Port-4135 port-1008 port-8080 Port-1197 port-1099 port-1009
+set logtraffic all
+next
+edit 82
+set name -P82
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.98
+set dstaddr A_172.16.249.41/31
+set action permit
+set schedule always
+set service port-81
+set logtraffic all
+next
+edit 62
+set name -P62
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.163 S_172.18.55.76 S_172.18.55.75 S_172.18.55.101 S_172.18.55.107
+set dstaddr S_172.16.166.113 S_172.26.227.100 S_172.16.227.121 S_172.16.227.100
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 93
+set name -P93
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.163 S_172.18.55.75
+set dstaddr S_172.16.167.229 S_172.16.167.209 S_172.16.167.208 S_172.16.167.216 S_172.16.167.84
+set action permit
+set schedule always
+set service port-1099 Port-6755-6 Port-9999
+set logtraffic all
+next
+edit 98
+set name -P98
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.149 S_172.18.55.152 S_172.18.55.163 S_172.18.55.147 S_172.18.55.148 S_172.18.55.76 S_172.18.55.111 S_172.18.55.75 S_172.18.55.150 S_172.18.55.79 S_172.18.55.151 S_172.18.55.83
+set dstaddr S_172.20.142.42 S_172.20.146.10 S_172.20.146.83 S_172.20.146.68
+set action permit
+set schedule always
+set service Port-9080 SSH HTTP HTTPS Port-9999 port-1099 port-1098
+set logtraffic all
+next
+edit 119
+set name -P119
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.76
+set dstaddr S_172.16.170.199
+set action permit
+set schedule always
+set service port-1009
+set logtraffic all
+next
+edit 121
+set name -P121
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.109 S_172.18.55.91 S_172.18.55.93
+set dstaddr S_172.16.167.70 S_172.20.146.13
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 122
+set name -P122
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.152 S_172.18.55.111 S_172.18.55.150 S_172.18.55.151 S_172.18.55.83
+set dstaddr S_172.16.185.131 S_172.26.34.35 S_172.26.34.34 S_172.26.34.64 S_172.26.34.171 S_172.16.167.25 S_172.16.167.30
+set action permit
+set schedule always
+set service port-9043 port-1098 port-1099 HTTP
+set logtraffic all
+next
+edit 132
+set name -P132
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.149 S_172.18.55.152 S_172.18.55.147 S_172.18.55.216 S_172.18.55.218 S_172.18.55.148 S_172.18.55.76 S_172.18.55.217 S_172.18.55.150 S_172.18.55.151
+set dstaddr S_172.16.167.229 S_172.16.167.209 S_172.16.167.216 S_172.16.167.84 S_172.16.167.135
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 134
+set name -P134
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.111
+set dstaddr S_172.26.43.26 S_172.26.43.28
+set action permit
+set schedule always
+set service port-9443 Port-9080 port-9043 HTTP port-8080
+set logtraffic all
+next
+edit 137
+set name -P137
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.103
+set dstaddr S_172.16.249.75
+set action permit
+set schedule always
+set service port-8888 PING
+set logtraffic all
+next
+edit 140
+set name -P140
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.95
+set dstaddr S_172.16.234.19
+set action permit
+set schedule always
+set service Port-4400
+set logtraffic all
+next
+edit 144
+set name -P144
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.95
+set dstaddr S_172.16.167.147 S_172.16.167.208
+set action permit
+set schedule always
+set service Port-9080 HTTP
+set logtraffic all
+next
+edit 150
+set name -P150
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr Grp_HBPWAS S_172.18.55.183
+set dstaddr S_172.18.148.18
+set action permit
+set schedule always
+set service port-6929
+set logtraffic all
+next
+edit 230
+set name -P230
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.76
+set dstaddr S_172.20.142.30 S_172.20.142.83
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 156
+set name -P156
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.118 S_172.18.55.163 S_172.18.55.76 S_172.18.55.111 S_172.18.55.75 S_172.18.55.83
+set dstaddr S_172.20.146.117 S_172.20.146.123 S_172.20.146.92 S_172.20.146.93 S_172.20.238.19 S_172.16.167.25 S_172.20.146.118 S_172.20.146.248 S_172.20.146.119 S_172.20.146.122 S_172.20.146.184
+set action permit
+set schedule always
+set service Port-7800-7803 Port-9080 Port-7080 HTTP port-8080 Port-7800 Port-50001 Port-7083
+set logtraffic all
+next
+edit 170
+set name -P170
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.95
+set dstaddr S_172.20.146.122
+set action permit
+set schedule always
+set service Ports-1400-1420 Ports-1500-1520
+set logtraffic all
+next
+edit 179
+set name -P179
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.132 S_172.18.55.131 S_172.18.55.134 S_172.18.55.133 S_172.18.55.130
+set dstaddr Z10_Jeyhoon-BNI S_172.26.32.130 Z10_Jeyhoon-DATA
+set action permit
+set schedule always
+set service Port-408 Port-32051
+set logtraffic all
+next
+edit 188
+set name -P188
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.54.201 Grp-IBG DB V Grp-TolidSrvs-Valiasr S_172.18.54.195
+set dstaddr S_172.16.27.63 S_172.26.36.132 S_172.16.27.61
+set action permit
+set schedule always
+set service Port-1915-1916
+set logtraffic all
+next
+edit 192
+set name -P192
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr Grp_HBPWAS S_172.18.55.183
+set dstaddr S_172.16.224.46 S_172.26.34.68 S_172.16.166.90 S_172.26.166.90 S_172.26.35.120
+set action permit
+set schedule always
+set service Port-1299 Port-9080 Port-1602 HTTP
+set logtraffic all
+next
+edit 211
+set name -P211
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.54.195
+set dstaddr S_172.20.145.60
+set action permit
+set schedule always
+set service Port-445
+set logtraffic all
+next
+edit 213
+set name -P213
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.163 S_172.18.55.47 S_172.18.55.75 S_172.18.55.83
+set dstaddr S_10.210.1.5 S_172.20.146.122 S_172.16.225.131 S_10.210.1.8
+set action permit
+set schedule always
+set service port-8080 HTTPS HTTP
+set logtraffic all
+next
+edit 217
+set name -P217
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.163 S_172.18.55.111 S_172.18.55.75
+set dstaddr S_172.16.167.133 S_172.26.34.128 S_172.16.224.37
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 227
+set name -P227
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.142 S_172.18.55.143
+set dstaddr S_172.16.163.32
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 239
+set name -P239
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.206
+set dstaddr S_172.16.225.187
+set action permit
+set schedule always
+set service port-8080 Port-9080 HTTP Port-8000
+set logtraffic all
+next
+edit 240
+set name -P240
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.83
+set dstaddr S_172.26.34.123
+set action permit
+set schedule always
+set service Port-9080
+set logtraffic all
+next
+edit 249
+set name -P249
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.163 S_172.18.55.75
+set dstaddr S_172.20.146.131
+set action permit
+set schedule always
+set service Port_18081
+set logtraffic all
+next
+edit 255
+set name -P255
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.111 S_172.18.55.206
+set dstaddr S_172.16.242.148 S_172.18.143.242 S_172.18.142.244 S_172.20.238.18 S_172.18.145.66
+set action permit
+set schedule always
+set service Port-9080 PING HTTP Port-8083 Port-8056 port-8080 HTTPS Port-9095 Port-9200 Port-8082
+set logtraffic all
+next
+edit 260
+set name -P260
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr A_172.18.55.0/24 A_172.18.54.0/23
+set dstaddr Grp-SOC-LOG_NEW S_172.26.87.211 S_172.26.87.198 S_172.26.87.213 A_172.26.87.128/26 S_172.26.87.233
+set action permit
+set schedule always
+set service Port-8089 Port-9997
+set logtraffic all
+next
+edit 270
+set name -P270
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.54.210 S_172.18.54.211
+set dstaddr S_172.16.225.234 S_172.16.225.237
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 271
+set name -P271
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.150
+set dstaddr S_172.16.16.94
+set action permit
+set schedule always
+set service port-885
+set logtraffic all
+next
+edit 277
+set name -P277
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.4 S_172.18.55.13
+set dstaddr S_172.16.16.76
+set action permit
+set schedule always
+set service Port-476
+set logtraffic all
+next
+edit 288
+set name -P288
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.107
+set dstaddr S_172.26.121.83
+set action permit
+set schedule always
+set service Port-1900-1902
+set logtraffic all
+next
+edit 290
+set name -P290
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.198
+set dstaddr S_172.20.146.152
+set action permit
+set schedule always
+set service SSH
+set logtraffic all
+next
+edit 291
+set name -P291
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.200
+set dstaddr S_172.26.32.20
+set action permit
+set schedule always
+set service port-885
+set logtraffic all
+next
+edit 294
+set name SPLUNK_LIC_SRV-P294
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.54.197
+set dstaddr S_172.16.27.248 S_172.26.87.224 S_172.16.27.245 S_172.16.27.247 S_172.16.27.244 S_172.16.27.246
+set action permit
+set schedule always
+set service Port-8089 Port-9997
+set logtraffic all
+next
+edit 296
+set name -P296
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.111
+set dstaddr S_172.26.34.90 S_172.26.43.104 S_172.16.224.24
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 282
+set name -P282
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.51 S_172.18.55.10
+set dstaddr S_172.26.35.51
+set action permit
+set schedule always
+set service Port-6855-6
+set logtraffic all
+next
+edit 302
+set name -P302
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.28
+set dstaddr S_172.16.16.76 S_172.16.16.62 S_172.16.16.94 S_172.16.16.82
+set action permit
+set schedule always
+set service Port-494 port-446 Port-476 Port-496
+set logtraffic all
+next
+edit 272
+set name -P272
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr Grp-OCR CDN S_172.18.55.33 S_172.18.55.28 S_172.18.55.83
+set dstaddr S_172.26.38.50
+set action permit
+set schedule always
+set service Port-2049
+set logtraffic all
+next
+edit 310
+set name -P310
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.111
+set dstaddr S_172.26.34.80
+set action permit
+set schedule always
+set service Port-9080
+set logtraffic all
+next
+edit 326
+set name -P326
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.111
+set dstaddr S_172.16.227.93
+set action permit
+set schedule always
+set service port-4443
+set logtraffic all
+next
+edit 323
+set name -P323
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.111
+set dstaddr S_172.26.34.171
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 308
+set name KATA EDR-P308
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr A_172.18.54.0/23
+set dstaddr S_172.31.48.98 A_172.26.94.64/27 S_172.26.96.66
+set action permit
+set schedule always
+set service Port-6379 port-8081 Port-15000-UDP Port-17000-UDP Port-17000 Port-14000 Port-13000-UDP Port-9092 HTTP HTTPS port-4443 Port-14000-UDP Port-15000 Port-13000
+set logtraffic all
+next
+edit 330
+set name -P330
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.44
+set dstaddr S_172.26.37.37
+set action permit
+set schedule always
+set service Port-20048(NFS) NFS
+set logtraffic all
+next
+edit 55
+set name -P55
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_10.210.1.5 S_10.210.1.8
+set dstaddr Grp-TolidSrvs-Valiasr
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 11
+set name -P11
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp_Azmoon
+set dstaddr S_172.18.55.59
+set action permit
+set schedule always
+set service Port-50001 Port-9080 HTTP
+set logtraffic all
+next
+edit 12
+set name -P12
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.61 C_172.20.148.9 C_172.20.148.48 S_172.16.167.91 C_172.20.148.110 C_172.20.147.52 172.16.224.92 C_172.20.148.55 C_10.210.1.9
+set dstaddr S_172.18.55.9 S_172.18.55.62
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 105
+set name -P105
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp-TolidJava
+set dstaddr S_172.18.55.61
+set action permit
+set schedule always
+set service Port-5500 SSH Port-50001
+set logtraffic all
+next
+edit 95
+set name -P95
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.75 C_172.20.148.214
+set dstaddr S_172.18.55.61
+set action permit
+set schedule always
+set service port-9060
+set logtraffic all
+next
+edit 13
+set name -P13
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.144.144 S_172.16.167.91 C_172.20.131.87 C_172.20.131.113
+set dstaddr S_172.18.55.61
+set action permit
+set schedule always
+set service Port-9080 HTTP
+set logtraffic all
+next
+edit 14
+set name -P14
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.139.25 C_172.20.148.82 C_172.20.148.126 C_172.20.148.190 C_172.20.148.92 C_172.20.140.82 C_172.20.148.81
+set dstaddr S_172.18.55.44
+set action permit
+set schedule always
+set service Port-9080 SSH HTTP FTP port-1099 Port-50001 port-1098
+set logtraffic all
+next
+edit 15
+set name -P15
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.185.45 C_172.20.147.33 C_172.20.147.6 C_172.20.147.57 S_172.16.163.47 C_172.20.147.4 C_172.20.147.13 C_172.20.147.25 C_172.20.147.24
+set dstaddr S_172.18.55.58 S_172.18.55.13 S_172.18.55.57
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 327
+set name -P327
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.101
+set dstaddr S_172.18.55.13
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 16
+set name -P16
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp-Intranet A_10.102.0.0/16
+set dstaddr S_172.18.55.5 S_172.18.55.44 S_172.18.55.61 S_172.18.55.103 S_172.18.55.51 S_172.18.55.6
+set action permit
+set schedule always
+set service Port-9080 HTTP
+set logtraffic all
+next
+edit 17
+set name -P17
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.75 C_172.20.148.214
+set dstaddr S_172.18.55.51 S_172.18.55.10
+set action permit
+set schedule always
+set service Port-50001 Port-9080 HTTP
+set logtraffic all
+next
+edit 167
+set name -P167
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.231 C_172.20.140.232 C_172.20.140.219 C_172.20.140.234
+set dstaddr S_172.18.55.51
+set action permit
+set schedule always
+set service SSH Port-50001
+set logtraffic all
+next
+edit 112
+set name -P112
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.100 C_172.20.151.46 C_172.20.151.47 C_172.20.148.75 C_172.20.151.51 C_172.20.147.12 C_172.20.140.220 C_172.20.151.33
+set dstaddr S_172.18.55.51
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 18
+set name -P18
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.123 C_172.20.147.120
+set dstaddr S_172.18.55.11
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 51
+set name -P51
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.144.173 C_172.20.144.166 C_172.20.144.168 C_172.20.144.216 C_172.20.144.178 C_172.20.144.158 C_172.20.147.91
+set dstaddr S_172.18.55.47
+set action permit
+set schedule always
+set service port-3389
+set logtraffic all
+next
+edit 54
+set name -P54
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.144.166 C_172.20.131.11 C_172.20.144.184 C_172.20.144.158 Grp-Intranet
+set dstaddr S_172.18.55.47
+set action permit
+set schedule always
+set service Port-843 port-8080 HTTPS HTTP
+set logtraffic all
+next
+edit 96
+set name -P96
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.120.167 C_172.20.120.141 C_172.20.120.135 S_172.16.170.214 C_172.20.120.152 C_172.20.120.163 C_172.20.120.170 C_172.20.120.140 C_172.20.120.176 C_172.20.120.183 C_172.20.120.207 C_172.20.120.162 C_172.20.120.217 S_172.16.170.203 C_172.20.120.24 C_172.20.120.169 S_172.16.170.209
+set dstaddr S_172.18.55.17
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 97
+set name -P97
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.139.25 C_172.20.147.123 C_172.20.148.101 C_172.20.148.126 C_172.20.148.190 C_172.20.147.62
+set dstaddr S_172.18.55.6 S_172.18.55.5
+set action permit
+set schedule always
+set service FTP SSH
+set logtraffic all
+next
+edit 110
+set name -P110
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.131.118 C_172.20.140.150
+set dstaddr S_172.18.55.18
+set action permit
+set schedule always
+set service SSH HTTP
+set logtraffic all
+next
+edit 126
+set name -P126
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.167.221
+set dstaddr S_172.18.55.51
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 136
+set name -P136
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.166.226 S_172.16.166.130 S_172.16.166.72 S_172.26.166.130
+set dstaddr S_172.18.55.15
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 39
+set name -P39
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.139.25 C_172.20.148.126
+set dstaddr Grp-IBGSrvs-Valiasr
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 73
+set name -P73
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_62.220.107.227 C_172.18.173.104 C_62.220.107.228
+set dstaddr S_172.18.55.82
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 101
+set name -P101
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp-Intranet Grp-IranIPs
+set dstaddr S_172.18.55.145 S_172.18.55.101 S_172.18.55.146
+set action deny
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 57
+set name -P57
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp-Intranet Grp-IranIPs
+set dstaddr S_172.18.55.118 S_172.18.54.5 S_172.18.55.144 S_172.18.55.97 S_172.18.54.4 S_172.18.55.183 S_172.18.54.7 S_172.18.54.6 S_172.18.54.9 S_172.18.55.146 S_172.18.55.85 S_172.18.54.8 S_172.18.55.84 S_172.18.55.145 S_172.18.54.3 S_172.18.55.82 S_172.18.55.101 S_172.18.54.2 S_172.18.55.83
+set action permit
+set schedule always
+set service HTTPS ICMP-ANY HTTP
+set logtraffic all
+next
+edit 10
+set name -P10
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.39 C_172.20.147.44
+set dstaddr S_172.18.55.78 S_172.18.55.73
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 116
+set name -P116
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.18 C_172.20.148.108 C_172.20.148.15 C_172.20.148.9 C_172.20.148.70 C_172.20.149.181 C_172.20.148.21 C_172.20.148.114 C_172.20.148.81
+set dstaddr S_172.18.55.145 S_172.18.55.146
+set action permit
+set schedule always
+set service port-9043 HTTPS Port-9080 HTTP
+set logtraffic all
+next
+edit 329
+set name -P329
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.16.0.0/21 C_172.16.0.231
+set dstaddr S_172.18.55.111
+set action permit
+set schedule always
+set service Port-Https-443 Port-80 HTTPS Port-9080
+set logtraffic all
+next
+edit 325
+set name -P325
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.26.43.165 C_172.20.140.198 S_172.26.43.166
+set dstaddr S_172.18.55.205
+set action permit
+set schedule always
+set service port-8080 port-9043 Port-9080 HTTP
+set logtraffic all
+next
+edit 25
+set name -P25
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.216 C_172.20.140.217 C_172.20.140.233
+set dstaddr S_172.18.55.98
+set action permit
+set schedule always
+set service Port-6868-9 HTTP
+set logtraffic all
+next
+edit 26
+set name -P26
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.134 A_172.20.160.0/24 A_172.20.131.0/24 C_172.20.149.45 C_172.20.140.218 A_172.20.139.0/24 C_172.20.139.24 A_172.20.147.0/24 C_172.20.139.28 C_172.20.140.217 C_172.20.140.104 C_172.20.139.34 A_172.20.148.0/24 A_172.20.141.0/24
+set dstaddr S_172.18.55.88 S_172.18.55.86 S_172.18.55.87
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 319
+set name -P319
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.151.157 C_172.20.151.183
+set dstaddr S_172.18.55.47
+set action permit
+set schedule always
+set service Port-Https-443 HTTPS HTTP
+set logtraffic all
+next
+edit 169
+set name -P169
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.139.24 C_172.20.139.34 C_172.20.140.104
+set dstaddr S_172.18.55.87
+set action permit
+set schedule always
+set service Port-9080-9 port-9443 HTTP Port-9060-61
+set logtraffic all
+next
+edit 28
+set name -P28
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.224.73 S_172.16.224.72 C_172.20.147.27
+set dstaddr S_172.18.55.68 S_172.18.55.69
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 29
+set name -P29
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.217
+set dstaddr S_172.18.55.96
+set action permit
+set schedule always
+set service port-9043 port-9060 Port-9080 HTTP
+set logtraffic all
+next
+edit 30
+set name -P30
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp-TAD-App C_172.20.147.123 C_172.20.140.219 S_172.16.167.22 S_172.16.167.201 C_172.20.140.221 C_172.20.140.220
+set dstaddr S_172.18.55.89
+set action permit
+set schedule always
+set service Port-9080 HTTP
+set logtraffic all
+next
+edit 332
+set name -P332
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.27.180 S_172.16.27.182 S_172.16.27.181
+set dstaddr S_172.18.54.194
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 31
+set name -P31
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.20.146.7
+set dstaddr S_172.18.55.89
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 32
+set name -P32
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.224.26 S_172.20.146.185 S_172.26.33.240 C_172.20.147.161 S_172.20.142.212 C_172.20.147.4 S_172.20.146.218 S_172.20.238.251 C_172.20.147.25 C_172.20.147.24
+set dstaddr S_172.18.55.91
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 38
+set name -P38
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp_Shaparak-Beh
+set dstaddr S_172.18.55.91 S_172.18.55.94
+set action permit
+set schedule always
+set service port-1099 port-1098
+set logtraffic all
+next
+edit 287
+set name -P287
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp-PO-14
+set dstaddr Grp-OCR CDN
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 68
+set name -P68
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.20.140.0/24 A_172.20.148.0/24 A_172.20.139.0/24 A_172.20.160.0/25 A_172.20.147.0/24 A_172.20.131.0/24 A_172.20.141.0/24
+set dstaddr S_172.18.55.163 S_172.18.55.68 S_172.18.55.90 S_172.18.55.76 S_172.18.55.69 S_172.18.55.75 S_172.18.55.94 S_172.18.55.91
+set action deny
+set schedule always
+set service SSH
+set logtraffic all
+next
+edit 65
+set name -P65
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.20.148.0/24 S_172.20.146.162 A_172.20.139.0/24 A_172.20.160.0/25 A_172.20.147.0/24 A_172.20.140.128/25 A_172.20.131.0/24 A_172.20.141.0/24
+set dstaddr S_172.18.55.163 S_172.18.55.68 S_172.18.55.90 S_172.18.55.76 S_172.18.55.69 S_172.18.55.75 S_172.18.55.94 S_172.18.55.91
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 81
+set name -P81
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.91 C_172.20.148.124 C_172.20.148.34 S_172.16.16.94 C_172.20.148.36 S_172.16.164.119 S_172.20.146.68 S_172.16.164.20 C_172.20.148.78 S_172.16.164.115
+set dstaddr S_172.18.55.100
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 69
+set name -P69
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.170.214 C_172.20.120.144
+set dstaddr S_172.18.55.94
+set action permit
+set schedule always
+set service port-8080
+set logtraffic all
+next
+edit 71
+set name -P71
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.131.53 C_172.20.149.139 C_172.20.131.48
+set dstaddr S_172.18.55.56
+set action permit
+set schedule always
+set service Port-7800
+set logtraffic all
+next
+edit 79
+set name -P79
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.18 C_172.20.120.144 S_172.16.170.214 C_172.20.120.197 C_172.20.147.167 S_172.16.166.72
+set dstaddr S_172.18.55.92
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 80
+set name -P80
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.220
+set dstaddr S_172.18.55.72
+set action permit
+set schedule always
+set service Port-9080 HTTP
+set logtraffic all
+next
+edit 84
+set name -P84
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.144.142 C_172.20.144.215 C_172.20.144.214 S_172.20.146.41 C_172.20.148.75 C_172.20.144.188 C_172.20.144.141 C_172.20.144.217 C_172.20.148.214
+set dstaddr S_172.18.55.74 S_172.18.55.78 S_172.18.55.73
+set action permit
+set schedule always
+set service Port-9080 port-9043 Port-1919 port-9060 HTTP Port-50001
+set logtraffic all
+next
+edit 85
+set name -P85
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.81 A_172.20.140.128/25
+set dstaddr S_172.18.55.81
+set action permit
+set schedule always
+set service port-9443 HTTPS Port-9080 HTTP
+set logtraffic all
+next
+edit 87
+set name -P87
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.217
+set dstaddr S_172.18.55.71 S_172.18.55.70
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 86
+set name -P86
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.18.173.104 C_172.18.4.239 C_172.18.4.225 C_192.168.44.130 C_172.20.140.217 C_172.20.149.139 C_172.16.1.185 C_172.20.149.135
+set dstaddr S_172.18.55.101
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 91
+set name -P91
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.16.101.251 C_172.20.120.171 C_172.20.120.12 C_172.16.8.41 C_172.18.101.117 C_172.18.2.134 S_172.18.173.114 C_172.16.8.29 C_172.16.8.33 C_172.16.8.58 C_172.18.2.34 C_172.20.120.172 C_172.20.149.135 C_172.20.149.139 C_172.20.150.42 C_172.20.150.49 S_172.16.170.209 C_172.20.120.167 C_172.20.120.141 C_172.16.0.48 C_172.18.2.99 S_172.16.170.214 C_172.20.120.207 C_172.16.8.34 C_172.20.164.246 C_172.18.5.91 C_172.20.149.181 S_172.20.142.109 C_172.18.2.2 S_172.16.224.239 C_172.16.9.78 C_172.18.2.183 C_172.20.120.135 C_172.20.120.170 C_172.20.120.176 C_172.20.120.140 C_172.20.120.210 S_172.20.205.69 C_172.20.120.168 C_172.16.3.118 C_172.20.120.169 S_172.20.205.116 C_172.20.149.186 C_172.18.4.173 C_172.20.149.137 S_172.20.146.154 S_172.16.167.25
+set dstaddr S_172.18.55.163 S_172.18.55.75
+set action permit
+set schedule always
+set service HTTPS Port-9080 HTTP
+set logtraffic all
+next
+edit 94
+set name -P94
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.131.3 C_172.20.147.45 C_172.20.131.49 A_172.20.39.0/24 C_172.20.147.123 C_172.20.131.58 C_172.20.147.67 C_172.20.147.14 S_172.20.146.3 C_172.20.147.126 C_172.20.147.35 C_172.20.147.13 C_172.20.147.167 C_172.20.131.43 C_172.20.147.44 C_172.20.141.59 C_172.20.141.61 A_172.20.140.128/25
+set dstaddr S_172.18.55.99
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 99
+set name -P99
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.225.32 S_172.16.225.31 S_172.20.146.148 S_172.20.146.92 S_172.16.167.208 S_172.16.167.147 S_172.20.146.220 S_172.20.142.109
+set dstaddr S_172.18.55.163 S_172.18.55.75
+set action permit
+set schedule always
+set service Port-7755-6 Port-9080 port-8080 Port-8755-6 Port-6755-6
+set logtraffic all
+next
+edit 100
+set name -P100
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.149.181
+set dstaddr S_172.18.55.163 S_172.18.55.75
+set action permit
+set schedule always
+set service port-9043 Port-9080 port-9443
+set logtraffic all
+next
+edit 103
+set name -P103
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.149.153 C_172.20.149.139 S_172.16.224.174 C_172.20.149.135 S_172.16.224.234 S_172.16.224.172 S_172.20.142.109 C_172.20.149.181 S_172.16.224.233 S_172.16.224.230 C_172.20.144.217 S_172.16.224.175 S_172.20.146.253 S_172.16.224.227 C_172.20.144.215 C_172.20.144.214 C_172.20.149.137 S_172.20.146.90 S_172.16.224.168 S_172.20.146.154 C_172.20.149.132 S_172.16.224.229
+set dstaddr S_172.18.55.76
+set action permit
+set schedule always
+set service HTTPS Port-9080 HTTP
+set logtraffic all
+next
+edit 111
+set name -P111
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.20.160.0/23 A_172.20.140.0/22 A_172.20.139.0/24 A_172.20.144.0/21
+set dstaddr S_172.18.55.109
+set action permit
+set schedule always
+set service Port-9080 HTTP
+set logtraffic all
+next
+edit 115
+set name -P115
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.34 C_172.20.148.36 C_172.20.140.156 C_172.20.148.35 C_172.20.148.78 C_172.20.148.25
+set dstaddr S_172.18.55.118 S_172.18.55.119
+set action permit
+set schedule always
+set service HTTPS SSH PING HTTP
+set logtraffic all
+next
+edit 117
+set name -P117
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.238 Grp_SMS Srvs C_172.20.140.156 C_172.20.140.244
+set dstaddr S_172.18.55.181 S_172.18.55.118 S_172.18.55.119
+set action permit
+set schedule always
+set service HTTPS port-3306 HTTP
+set logtraffic all
+next
+edit 118
+set name -P118
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.20.148.0/24
+set dstaddr S_172.18.55.109
+set action permit
+set schedule always
+set service Port-9080
+set logtraffic all
+next
+edit 83
+set name -P83
+set srcintf Trust
+set dstintf Trust
+set srcaddr Any
+set dstaddr S_172.18.55.87
+set action deny
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 124
+set name -P124
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.221 C_172.20.140.217 C_172.20.140.233 C_172.20.140.234
+set dstaddr S_172.18.55.93
+set action permit
+set schedule always
+set service port-9043 port-9060 Port-9080 HTTP
+set logtraffic all
+next
+edit 125
+set name -P125
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.154 C_172.20.148.124 C_172.20.140.156 C_172.20.148.36 C_172.20.148.126 C_172.20.151.193 C_172.20.148.78 C_172.20.139.34 C_172.20.148.25
+set dstaddr S_172.18.55.121 S_172.18.55.124 S_172.18.55.67 S_172.18.55.122
+set action permit
+set schedule always
+set service Port-1884 Port-9080 Port-1890-2 SSH HTTP HTTPS Port-1415 Port-1883 port-1414
+set logtraffic all
+next
+edit 128
+set name -P128
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.225.234 S_172.16.225.237
+set dstaddr S_172.18.54.210 S_172.18.54.211
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 130
+set name -P130
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.124
+set dstaddr S_172.18.55.118
+set action permit
+set schedule always
+set service SSH
+set logtraffic all
+next
+edit 131
+set name -P131
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.124 C_172.20.148.34 C_172.20.140.244 S_172.26.34.62 S_172.16.185.154 C_172.20.149.135 S_172.26.34.63 Grp-PayamResan Srvs C_172.20.140.154 S_172.16.185.152 S_172.16.185.74 C_172.20.140.156 C_172.20.148.36 S_172.20.146.68 S_172.26.34.61 S_172.16.185.143 S_172.16.185.153 S_172.20.146.248 C_172.20.140.253 C_172.20.148.25 C_172.20.148.126 C_172.20.148.190 C_172.20.140.157 C_172.20.140.238 S_172.16.185.73 C_172.20.148.78 C_172.20.140.239
+set dstaddr S_172.18.55.66
+set action permit
+set schedule always
+set service port-8080 Port-9080
+set logtraffic all
+next
+edit 157
+set name -P157
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.139.24 C_172.20.139.34 C_172.20.139.28
+set dstaddr S_172.18.55.66
+set action permit
+set schedule always
+set service port-9043 port-9060
+set logtraffic all
+next
+edit 133
+set name -P133
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.154 C_172.20.148.126 C_172.20.148.190
+set dstaddr S_172.18.55.121 S_172.18.55.122 S_172.18.55.120
+set action permit
+set schedule always
+set service Port-9080 port-9043 SSH port-9060 HTTP HTTPS Port-1883 Port-50001
+set logtraffic all
+next
+edit 135
+set name -P135
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.154 S_172.16.164.110 C_172.20.148.190 C_172.20.147.40 C_172.20.148.25
+set dstaddr S_172.18.55.67
+set action permit
+set schedule always
+set service Port-1883 port-8080 Port-50001 Port-9080
+set logtraffic all
+next
+edit 138
+set name -P138
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.219 C_172.20.147.96 C_172.20.140.221 C_172.20.140.217 C_172.20.140.233 C_172.20.147.60 C_172.20.140.220 C_172.20.140.231
+set dstaddr S_172.18.55.89 S_172.18.55.103
+set action permit
+set schedule always
+set service Port-1523 HTTP
+set logtraffic all
+next
+edit 139
+set name -P139
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.20.146.78 S_172.20.146.77
+set dstaddr S_172.18.55.67
+set action permit
+set schedule always
+set service Port-1415
+set logtraffic all
+next
+edit 141
+set name -P141
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.144.144 S_172.16.174.113 C_172.20.144.168 C_172.20.144.216
+set dstaddr S_172.18.55.73
+set action permit
+set schedule always
+set service Port-9080
+set logtraffic all
+next
+edit 142
+set name -P142
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.160.161 C_172.20.150.130 C_172.20.139.24 S_172.20.130.82 C_172.20.139.28 C_172.20.144.37 A_172.20.140.128/25 A_172.20.131.0/24 A_172.20.141.0/24
+set dstaddr S_172.18.55.11
+set action permit
+set schedule always
+set service Port-9443-9452 port-9443 Port-9080 port-9043 port-9060 HTTP HTTPS
+set logtraffic all
+next
+edit 143
+set name -P143
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.36
+set dstaddr S_172.18.55.120
+set action permit
+set schedule always
+set service Port-9080
+set logtraffic all
+next
+edit 145
+set name -P145
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.167.149
+set dstaddr S_172.18.55.92
+set action permit
+set schedule always
+set service Port-9080 SNMP Port-8880
+set logtraffic all
+next
+edit 146
+set name -P146
+set srcintf Trust
+set dstintf Trust
+set srcaddr Any
+set dstaddr S_172.18.55.118
+set action permit
+set schedule always
+set service HTTPS HTTP
+set logtraffic all
+next
+edit 306
+set name Kata-03-P306
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.26.94.77
+set dstaddr S_172.18.55.47
+set action permit
+set schedule always
+set service Port-15000 Port-17000
+set logtraffic all
+next
+edit 148
+set name -P148
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.26.43.71 S_172.16.185.74 S_172.16.225.69 S_172.20.146.68 S_172.16.185.73 S_172.16.185.76 S_172.16.185.143 S_172.20.238.19 S_172.16.185.153 S_172.26.43.69 S_172.26.43.70 S_172.16.185.72 S_172.16.185.154 S_172.16.185.78 S_172.16.185.77 S_172.16.185.75
+set dstaddr S_172.18.55.174
+set action permit
+set schedule always
+set service Port-1202 Port-9080 Port-55713 Port-1502
+set logtraffic all
+next
+edit 149
+set name -P149
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.164.122 C_172.20.148.78 C_172.20.140.156
+set dstaddr S_172.18.55.122
+set action permit
+set schedule always
+set service Port-9080 Port-1890-2 port-9043 port-9060 HTTP Port-1415 Port-1883 Port-50001 port-1414
+set logtraffic all
+next
+edit 151
+set name -P151
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.154
+set dstaddr S_172.18.55.118 S_172.18.55.70 S_172.18.55.100
+set action permit
+set schedule always
+set service port-3306 Port-50001
+set logtraffic all
+next
+edit 154
+set name -P154
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.156 C_172.20.140.244
+set dstaddr S_172.18.55.118
+set action permit
+set schedule always
+set service port-3306
+set logtraffic all
+next
+edit 165
+set name -P165
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.20.146.169 S_172.16.167.151 S_172.16.224.160
+set dstaddr Grp-IBG DB V
+set action permit
+set schedule always
+set service Port-5666
+set logtraffic all
+next
+edit 155
+set name -P155
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.26.68.10 C_172.26.68.9 GRP-DBA C_172.26.68.7 S_172.16.167.151 C_172.26.68.5 S_172.16.224.160
+set dstaddr Grp-IBG DB V S_172.18.55.13
+set action permit
+set schedule always
+set service port-3389 port-50002 Port-50046 Port-50003 SSH PING HTTP Port-9200 Port-9300 port-8080 HTTPS Port-50038 Port-2382 Port-50001 port-50000 Port-5666
+set logtraffic all
+next
+edit 158
+set name -P158
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.160.172
+set dstaddr S_172.18.55.78
+set action permit
+set schedule always
+set service Port-9080 SSH port-9060 HTTP FTP Port-50001
+set logtraffic all
+next
+edit 159
+set name -P159
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.154 C_172.20.140.218
+set dstaddr S_172.18.55.144 S_172.18.55.66 S_172.18.55.124 S_172.18.55.67
+set action permit
+set schedule always
+set service Port-1884 port-9443 Port-9080 port-9043 SSH port-9060 HTTP HTTPS Port-1883 Port-1415
+set logtraffic all
+next
+edit 160
+set name -P160
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp_BEHBI
+set dstaddr Grp_SrvGhognos
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 3
+set name -P3
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr Any
+set dstaddr Any
+set action deny
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 163
+set name -P163
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.55
+set dstaddr S_172.18.55.14 S_172.18.55.144
+set action permit
+set schedule always
+set service Port-9080 HTTP
+set logtraffic all
+next
+edit 164
+set name -P164
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.20.146.211 C_172.20.139.137 C_172.20.147.76
+set dstaddr S_172.18.55.132 S_172.18.55.131 S_172.18.55.134 S_172.18.55.133 S_172.18.55.130
+set action permit
+set schedule always
+set service Port-9300 HTTPS HTTP
+set logtraffic all
+next
+edit 172
+set name -P172
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.20.146.122 S_172.26.121.83
+set dstaddr S_172.18.55.107
+set action permit
+set schedule always
+set service Port-1900-1902
+set logtraffic all
+next
+edit 321
+set name -P321
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.26.121.83
+set dstaddr S_172.18.55.107
+set action permit
+set schedule always
+set service Port-1803
+set logtraffic all
+next
+edit 173
+set name -P173
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.40 C_172.20.147.39 C_172.20.147.27
+set dstaddr S_172.18.55.109
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 183
+set name -P183
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.149.61 C_172.20.149.59
+set dstaddr S_172.18.55.118 S_172.18.55.181
+set action permit
+set schedule always
+set service HTTPS SSH port-3306
+set logtraffic all
+next
+edit 184
+set name -P184
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.131.53 C_172.20.149.139 C_172.20.131.48
+set dstaddr S_172.18.55.54
+set action permit
+set schedule always
+set service FTP
+set logtraffic all
+next
+edit 190
+set name -P190
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.16.0.0/12 Grp_FANCognos
+set dstaddr S_172.18.55.138 S_172.18.55.139
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 199
+set name -P199
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.20.144.128/25 A_172.20.139.0/24 A_172.20.151.0/24 A_172.20.160.0/25 A_172.20.147.0/24 A_172.20.148.0/24 A_172.20.140.128/25
+set dstaddr S_172.18.55.184
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 201
+set name -P201
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.57
+set dstaddr S_172.18.55.58
+set action permit
+set schedule always
+set service Port-50001
+set logtraffic all
+next
+edit 212
+set name -P212
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.18.171.13
+set dstaddr S_172.18.54.22
+set action permit
+set schedule always
+set service port-1433 Port-1434
+set logtraffic all
+next
+edit 219
+set name -P219
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.35 S_172.16.167.186 C_172.20.147.39
+set dstaddr S_172.18.55.163 S_172.18.55.75
+set action permit
+set schedule always
+set service Port-7555-7556
+set logtraffic all
+next
+edit 224
+set name -P224
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.154 C_172.20.140.169 C_172.20.140.197 C_172.20.140.156 C_172.20.140.206 C_172.20.140.244 C_172.20.140.151 C_172.20.140.150 C_172.20.140.224 C_172.20.140.213 C_172.20.140.198 C_172.20.140.196 C_172.20.140.152
+set dstaddr S_172.18.55.207 S_172.18.55.182 S_172.18.55.181 S_172.18.55.206
+set action permit
+set schedule always
+set service Port-9080 port-9043 HTTP Port-9200 port-8080 HTTPS
+set logtraffic all
+next
+edit 301
+set name -P301
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.149.186 C_172.20.144.168 C_172.20.144.216
+set dstaddr S_172.18.55.206
+set action permit
+set schedule always
+set service port-9443 Port-9080 port-9043 HTTP HTTPS
+set logtraffic all
+next
+edit 228
+set name -P228
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.20.142.239
+set dstaddr S_172.18.54.194
+set action permit
+set schedule always
+set service SSH
+set logtraffic all
+next
+edit 229
+set name -P229
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.121.196 C_172.20.136.73 C_172.20.136.71 172.16.167.70/32
+set dstaddr S_172.18.55.109
+set action permit
+set schedule always
+set service HTTP
+set logtraffic all
+next
+edit 265
+set name -P265
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.26.43.71 S_172.16.185.74 S_172.16.185.73 S_172.26.43.69 S_172.16.185.155 S_172.26.43.70 S_172.16.185.153 S_172.16.185.156 S_172.16.185.154
+set dstaddr S_172.18.55.174
+set action permit
+set schedule always
+set service Port-1502
+set logtraffic all
+next
+edit 278
+set name -P278
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.97 C_172.20.0.190 C_172.20.147.12
+set dstaddr S_172.18.55.26
+set action permit
+set schedule always
+set service port-3389 port-1433 Port-1434
+set logtraffic all
+next
+edit 307
+set name -P307
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.26.32.182
+set dstaddr S_172.18.55.26
+set action permit
+set schedule always
+set service port-1433 Port-1434
+set logtraffic all
+next
+edit 279
+set name Srv-PIM-P279
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.22.170.10 S_172.22.170.12 S_172.22.170.11
+set dstaddr S_172.18.55.71
+set action permit
+set schedule always
+set service HTTPS SSH
+set logtraffic all
+next
+edit 283
+set name -P283
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.30 C_172.20.148.15 C_172.20.148.148 C_172.20.148.116 C_172.20.148.72
+set dstaddr S_172.18.55.4
+set action permit
+set schedule always
+set service port-9043 Port-50001
+set logtraffic all
+next
+edit 280
+set name Test-Amniat-P280
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.186 C_172.20.29.231 C_172.20.140.168 C_172.20.140.157
+set dstaddr S_172.18.55.111
+set action permit
+set schedule always
+set service port-9443 Port-9080
+set logtraffic all
+next
+edit 284
+set name -P284
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.20.148.0/24 A_172.20.131.0/24 A_172.20.141.0/24
+set dstaddr S_172.18.55.4
+set action permit
+set schedule always
+set service SSH Port-9080
+set logtraffic all
+next
+edit 285
+set name -P285
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.26.32.182 S_172.26.32.183
+set dstaddr S_172.18.55.47
+set action permit
+set schedule always
+set service Port-135 Port-843 port-1433 port-8080 Port-998 Port-9998
+set logtraffic all
+next
+edit 297
+set name -P297
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.213 C_172.20.139.14 C_172.20.139.4
+set dstaddr S_172.18.55.111
+set action permit
+set schedule always
+set service port-9043 Port-9080
+set logtraffic all
+next
+edit 298
+set name -P298
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.224.114
+set dstaddr S_172.18.55.44
+set action permit
+set schedule always
+set service Port-9080
+set logtraffic all
+next
+edit 303
+set name -P303
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.163 C_172.20.140.166 C_172.20.140.18 C_172.20.140.234 C_172.20.140.165 C_172.20.140.232 C_172.20.140.211 C_172.20.140.141
+set dstaddr S_172.18.55.206
+set action permit
+set schedule always
+set service port-8080 Port-9080
+set logtraffic all
+next
+edit 313
+set name -P313
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.140.11 C_172.20.140.12
+set dstaddr S_172.18.54.197
+set action permit
+set schedule always
+set service Port-8896
+set logtraffic all
+next
+edit 312
+set name -P312
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.26.38.43
+set dstaddr S_172.18.55.15 S_172.18.55.17
+set action permit
+set schedule always
+set service SSH
+set logtraffic all
+next
+edit 295
+set name -P295
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.147.71 C_172.20.147.39
+set dstaddr S_172.18.55.75
+set action permit
+set schedule always
+set service Port-6756 Port-6755-6
+set logtraffic all
+next
+edit 315
+set name -P315
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.26.35.138 C_172.26.35.211 C_172.26.35.212
+set dstaddr S_172.18.55.61
+set action permit
+set schedule always
+set service Port-80
+set logtraffic all
+next
+edit 309
+set name KATA EDR-P309
+set srcintf Trust
+set dstintf Trust
+set srcaddr A_172.26.94.64/27
+set dstaddr A_172.18.54.0/23
+set action permit
+set schedule always
+set service Port-15000-UDP Port-17000 SNMP Port-17000-UDP Port-15000
+set logtraffic all
+next
+edit 316
+set name -P316
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.148.148
+set dstaddr S_172.18.150.164
+set action permit
+set schedule always
+set service Port-110
+set logtraffic all
+next
+edit 318
+set name -P318
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.26.40.56 S_172.26.38.50
+set dstaddr S_172.18.55.99 S_172.18.55.33
+set action permit
+set schedule always
+set service Port-80 Port-9002 Port-2049 SSH Port-Https-443 Port-5050
+set logtraffic all
+next
+edit 322
+set name -P322
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.131.59
+set dstaddr S_172.18.55.111
+set action permit
+set schedule always
+set service Port-9080 HTTP
+set logtraffic all
+next
+edit 314
+set name -P314
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.149.154
+set dstaddr S_172.18.55.111
+set action permit
+set schedule always
+set service port-9443
+set logtraffic all
+next
+edit 331
+set name -P331
+set srcintf Trust
+set dstintf Trust
+set srcaddr S_172.16.224.244
+set dstaddr S_172.18.55.163
+set action permit
+set schedule always
+set service Port-6755-6
+set logtraffic all
+next
+edit 320
+set name -P320
+set srcintf Trust
+set dstintf Trust
+set srcaddr C_172.20.143.130 C_172.20.143.135 C_172.20.143.132 C_172.20.143.133 C_172.20.143.155 C_172.20.143.164
+set dstaddr S_172.18.54.200
+set action permit
+set schedule always
+set service port-902 HTTPS SSH HTTP
+set logtraffic all
+next
+edit 1
+set name -P1
+set srcintf Trust
+set dstintf Trust
+set srcaddr Any
+set dstaddr Any
+set action deny
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 178
+set name -P178
+set srcintf Trust
+set dstintf Trust
+set srcaddr Grp_All_SRV_NSG Grp_All_SRV_Tolid Grp_All_SRV_IBG
+set dstaddr Grp_All_SRV_NSG Grp_All_SRV_Tolid Grp_All_SRV_IBG
+set action permit
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 2
+set name -P2
+set srcintf Trust
+set dstintf Trust
+set srcaddr Any
+set dstaddr Any
+set action deny
+set schedule always
+set service ANY
+set logtraffic all
+next
+edit 274
+set name -P274
+set srcintf Untrust
+set dstintf Untrust
+set srcaddr S_172.18.55.144 S_172.18.55.83 S_172.18.55.182 S_172.18.55.196 S_172.18.55.66 S_172.18.55.205 S_172.18.55.197
+set dstaddr S_172.26.32.130
+set action permit
+set schedule always
+set service Port-494
+set logtraffic all
+next
