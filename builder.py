@@ -13,12 +13,13 @@ def define_ports(ports_dic):
             port_type = port_data[0].split('_')[0]
             dst_port_range = port_data[0].split('_')[4]
             converted_config.write(f"edit {port_name}\n")
-            converted_config.write(f"set {port_type}-portrange {dst_port_range}\n")
+            converted_config.write(
+                f"set {port_type}-portrange {dst_port_range}\n")
             converted_config.write("next\n")
-            
+
 
 def define_addr(address_data):
-    
+
     for address_name, address_value in address_data.items():
         if isinstance(address_value, list):
             # If the value is a list, assume it's a subnet and add it to the addresses
@@ -30,7 +31,7 @@ def define_addr(address_data):
             # If the value is a dictionary, recursively extract addresses from it
             grp_name = address_name
             grp_memebers = address_value
-            groups.update({grp_name:grp_memebers})
+            groups.update({grp_name: grp_memebers})
 
 
 def define_addrgrp(grp_memebers):
@@ -100,5 +101,15 @@ with open("parsed_config.json") as backup_file,\
         p_action = policy["pol_action"]
         p_log = policy["log_action"]
         p_scheduler = "always"
-        policy_writer(pol_id, p_name, p_srcint, p_dstint, p_srcaddr,
-                      p_dstaddr, p_ports, p_action, p_scheduler, count)
+        if p_srcaddr == "Any":
+            p_srcaddr = "all"
+        if p_dstaddr == "Any":
+            p_dstaddr = "all"
+        if p_ports == "ANY":
+            p_ports = "ALL"
+        if p_srcaddr == "all" and p_dstaddr == "all" and p_ports == "ALL":
+            print(f"Policy {pol_id} with source {p_srcaddr} and destination {p_dstaddr}has been found.\n\
+                  It might be dangerous!")
+        else:
+            policy_writer(pol_id, p_name, p_srcint, p_dstint, p_srcaddr,
+                          p_dstaddr, p_ports, p_action, p_scheduler, count)
