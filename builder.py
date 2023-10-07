@@ -14,7 +14,7 @@ def define_ports(ports_dic):
             dst_port_range = port_data[0].split('_')[4]
             converted_config.write(f"edit {port_name}\n")
             converted_config.write(f"set {port_type}-portrange {dst_port_range}\n")
-            converted_config.write("next\n")s
+            converted_config.write("next\n")
             
 
 def define_addr(address_data):
