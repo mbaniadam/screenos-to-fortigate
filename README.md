@@ -1,6 +1,13 @@
 # Juniper ScreenOS to FortiGate Configuration Converter
 This is a Python script that converts Juniper ScreenOS firewall policies, addresses, address groups and custom ports to Fortigate firewall configuration. It takes a txt backup file of Juniper ScreenOS firewall configuration as input and generates Fortigate configuration commands in a text file.
 
+This script supports the conversion of the following cases:
+
+- Firewall policies
+- Addresses
+- Address groups
+- Custom ports
+  
 ## Usage
 
 1- **Parse the Original Configuration:**
