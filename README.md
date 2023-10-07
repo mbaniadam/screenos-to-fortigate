@@ -4,9 +4,9 @@ This is a Python script that converts Juniper ScreenOS firewall policies, addres
 This script supports the conversion of the following cases:
 
 - Firewall policies
-- Addresses
-- Address groups
-- Custom ports
+- Addresses (only used in policies)
+- Address groups (only used in policies)
+- Custom ports (only used in policies)
   
 ## Usage
 
