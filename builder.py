@@ -36,10 +36,11 @@ def define_addr(address_data):
 
 def define_addrgrp(grp_memebers):
     for grp_name, member in grp_memebers.items():
-        members = ' '.join(member.keys())
+        members = ' '.join(f'"{w}"' for w in member.keys())
         converted_config.write(f"edit {grp_name}\n")
         converted_config.write(f"append member {members}\n")
         converted_config.write("next\n")
+
 
 
 def policy_writer(policy_id, policy_name, src_int, dst_int, src_addr, dst_addr, port, action, scheduler, count):
@@ -94,22 +95,22 @@ with open("parsed_config.json") as backup_file,\
     for pol_id, policy in data.items():
         p_name = policy["pol_name"]
         p_srcint = policy["src_zone"]
-        p_dstint = policy["dst_zone"]
-        p_srcaddr = ' '.join(list(map(lambda x: x, policy["src_addr"].keys())))
-        p_dstaddr = ' '.join(list(map(lambda x: x, policy["dst_addr"].keys())))
-        p_ports = ' '.join(list(map(lambda x: x, policy["pol_proto"].keys())))
+        p_dstint = policy["dst_zone"]#f'"{w}"' for w in
+        p_srcaddr = ' '.join(list(map(lambda x: f'"{x}"', policy["src_addr"].keys())))
+        p_dstaddr = ' '.join(list(map(lambda x: f'"{x}"', policy["dst_addr"].keys())))
+        p_ports = ' '.join(list(map(lambda x: f'"{x}"', policy["pol_proto"].keys())))
         p_action = policy["pol_action"]
         p_log = policy["log_action"]
         p_scheduler = "always"
-        if p_srcaddr == "Any":
+        if p_srcaddr == '"Any"':
             p_srcaddr = "all"
-        if p_dstaddr == "Any":
+        if p_dstaddr == '"Any"':
             p_dstaddr = "all"
-        if p_ports == "ANY":
+        if p_ports == '"ANY"':
             p_ports = "ALL"
         if p_srcaddr == "all" and p_dstaddr == "all" and p_ports == "ALL":
-            print(f"Policy {pol_id} with source {p_srcaddr} and destination {p_dstaddr}has been found.\n\
-                  It might be dangerous!")
+            print(f"Policy {pol_id} with source {p_srcaddr} and destination {p_dstaddr} founded.\n\
+                  It might be dangerous. Ignored!")
         else:
             policy_writer(pol_id, p_name, p_srcint, p_dstint, p_srcaddr,
                           p_dstaddr, p_ports, p_action, p_scheduler, count)
