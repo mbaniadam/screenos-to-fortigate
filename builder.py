@@ -45,7 +45,7 @@ def define_addrgrp(grp_memebers):
 
 def policy_writer(policy_id, policy_name, src_int, dst_int, src_addr, dst_addr, port, action, scheduler, count):
     converted_config.write(f"edit {policy_id}\n")
-    converted_config.write(f"set name {policy_name}-P{policy_id}\n")
+    converted_config.write(f"set name \"{policy_name}-P{policy_id}\"\n")
     converted_config.write(f"set srcintf {src_int}\n")
     converted_config.write(f"set dstintf {dst_int}\n")
     converted_config.write(f"set srcaddr {src_addr}\n")
